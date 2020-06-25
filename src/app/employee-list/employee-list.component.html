@@ -1,0 +1,38 @@
+<div class="table-responsive">
+  <label>Search Filter: &nbsp;</label>
+  <input id="filter" type="text" name="searchBox" class="searchBox" [(ngModel)]="nameFilter"
+    placeholder="Search By Name">
+  <br>
+  <label> Total Number of Employees : &nbsp;</label><label id="count">
+    {{(employees | employeeFilter: nameFilter)?.length}} </label>
+  <br>
+  <table class="table" #myTable>
+    <thead>
+      <tr>
+        <th scope="col">Emp ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody #tableBody *ngFor="let employee of employees | employeeFilter: nameFilter; let i = index;">
+      <tr>
+        <td scope="row"><button (click)="onDetails(employee)" type="button" class="btn btn-info"> {{employee.id}}
+          </button></td>
+        <td id="name{{i+1}}">{{employee.name}}</td>
+        <td id="loc{{i+1}}">{{employee.location}}</td>
+        <td id="email{{i+1}}">{{employee.email}}</td>
+        <td id="mob{{i+1}}">{{employee.phone}}</td>
+        <td><button (click)="onEdit(employee)" type="button" class="btn btn-primary">Edit {{employee.id}}</button></td>
+        <td><button (click)="onDelete(employee)" type="button" class="btn btn-danger">Delete {{employee.id}}</button>
+        </td>
+      </tr>
+    </tbody>
+    <tr style="text-align: center;" *ngIf="(employees | employeeFilter: nameFilter)?.length === 0">
+      <td colspan="7" class="text-danger">No Records Found!</td>
+    </tr>
+  </table>
+</div>

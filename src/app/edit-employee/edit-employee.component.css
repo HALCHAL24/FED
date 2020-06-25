@@ -1,0 +1,18 @@
+#formBox {
+    width: 80%;
+    height: 80%;
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin: auto;
+    padding: 30px;
+}
+
+#update {
+    position: absolute;
+    left: 40%;
+}
+
+#backButton {
+    position: absolute;
+    right: 40%;
+}

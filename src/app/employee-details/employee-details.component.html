@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <h3 style="text-align: center; color: royalblue;">Employee Details</h3>
+    <div id="detailsBox">
+        <h5 id="id"> ID: &nbsp;{{ employeeId }}</h5>
+        <h5 id="name"> Name: &nbsp;{{ employeeDetails.name }}</h5>
+        <h5 id="email"> Email: &nbsp;{{ employeeDetails.email }}</h5>
+        <h5 id="mobile"> Mobile: &nbsp;{{ employeeDetails.phone }}</h5>
+        <h5 id="location"> Location: &nbsp;{{ employeeDetails.location }}</h5>
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button id="back" (click)="goBack()" type="button" class="btn btn-primary">back</button>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+#detailsBox {
+    background-color: lightgrey;
+    width: 40%;
+    height: 40%;
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin: auto;
+    padding: 17px;
+}
+
+#back {
+    position: absolute;
+    left: 48%;
+}
